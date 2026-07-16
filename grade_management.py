@@ -1,12 +1,4 @@
-print("WELCOME TO THE GRADE MANAGEMENT SYSTEM")
-who=input("Are you a teacher or student?")
-if who=="teacher":
-  Number=int(input("How many students are in your class?"))   
-
-print("Enter Students Data")
-
 students={}
-
 
 def askCredentials():
  name=input("What is your name?")    
@@ -23,22 +15,31 @@ def askCredentials():
     print("Fair!")
  elif score>=40:
     print("Put more effort!")
- elif score<=39:
+ else :
     print("Fail,you have the potential!") 
 
  students[admission_no]={
          "name":name,
          "score":score,
          "mobile_number":mobile_number
-         }                       
- for r in range(Number):
-    askCredentials()
-    
+         }         
 
-print(students)
+print("WELCOME TO THE GRADE MANAGEMENT SYSTEM")
+who=input("Are you a teacher or student?")
+if who=="teacher":
+    Number=int(input("How many students are in your class?"))  
 
-if who=="student":
- sub=input("Enter your admission number?")
+    for r in range(Number):
+       askCredentials() 
 
-if sub in students:
-   print(students[sub])
+
+
+    print(students)
+elif who=="student":
+  sub=input("Enter your admission number?")
+
+  if sub in students:
+     print(students[sub])
+  else:
+     print("Admission number not found please contact your teacher!")
+       
