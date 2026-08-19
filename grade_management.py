@@ -1,10 +1,14 @@
 students={}
 
 def askCredentials():
- name=input("What is your name?")    
- admission_no=input("What is your admission number?")
- score=int(input("What did you score in the test>"))
- mobile_number=input("Please enter your parent's or gurdian's number")
+ name=input("What is the student's name?")    
+ admission_no=input("What is the student's admission number?")
+ score=int(input("What did the student score in the test>"))
+
+ while score > 0 and score > 100 :
+  score = int(input("Please re-enter the student's score: "))
+  
+ mobile_number=input("Please enter the student's parent's or gurdian's number")
  def grade_score():
   if score>=80:
     return("A")
@@ -19,6 +23,7 @@ def askCredentials():
   else :
     return("E") 
   
+ grade = grade_score()
 
  comment = {
              "A": "Excellent,work!",
@@ -35,8 +40,8 @@ def askCredentials():
          "name":name,
          "score":score,
          "mobile_number":mobile_number,
-         "grade":grade_score(),
-         "remarks":comment[grade_score()]     
+         "grade":grade,
+         "remarks":comment[grade]     
          }         
 
 print("WELCOME TO THE GRADE MANAGEMENT SYSTEM")
