@@ -5,7 +5,7 @@ def askCredentials():
  admission_no=input("What is the student's admission number?")
  score=int(input("What did the student score in the test>"))
 
- while score > 0 and score > 100 :
+ while score > 0 and score <= 100 :
   score = int(input("Please re-enter the student's score: "))
   
  mobile_number=input("Please enter the student's parent's or gurdian's number")
@@ -43,6 +43,8 @@ def askCredentials():
          "grade":grade,
          "remarks":comment[grade]     
          }         
+
+
 
 print("WELCOME TO THE GRADE MANAGEMENT SYSTEM")
 who=input("Are you a teacher or student?")
